@@ -1,0 +1,165 @@
+<!-- 
+Aditya Chaudhari, ac3959@drexel.edu
+CS530: DUI project
+-->
+{% block body %}
+
+<html>
+<head>
+    <style>
+            form.form1 {
+        padding-top: 40px;
+    }
+    
+    body {
+    margin: 0;
+    background-color: #F3EBF6;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.main3 {
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 230px;
+  margin: 2em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.main4 {
+  background-color: #FFFFFF;
+  width: 400px;
+  height: 5000px;
+  margin: 2em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+.search1 {
+      padding-top: 0px;
+      color: #8C55AA;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: bold;
+      font-size: 23px;
+  }
+
+  .un1 {
+    width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+
+    .submit1 {
+      cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right, #9C27B0, #E040FB);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    .ul1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .li1 {
+    float: left;
+  }
+  
+  .li1 a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 40px;
+    text-decoration: none;
+  }
+  
+  .li1 a:hover {
+    background-color: #111;
+  }
+
+  .bakbody{
+  background-image: url("/img/Bookbak.jpg");
+  height: 100%;
+  padding-bottom: 5000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+	
+}
+        </style>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+crossorigin="anonymous">
+</head>
+<body>
+    <div class="bakbody">
+    <ul class="ul1">
+        <li class="li1"><a href="/">Home</a></li>
+        <li class="li1"><a href="/about">About</a></li>
+        <li class="li1"><a href="#books">Books</a></li>
+    </ul>
+
+    <div class="main3">
+        <form action={{ url_for('books') }} method="post" class="form1">
+            <p class="search1" align="center">Search by Author Name</p>
+            <input type="text" class="un1" name="books" placeholder="Author name">
+            <button type="submit" class="submit1">Search</button>
+        </form>
+    </div>
+<!--
+    <div class="card" style="width: 20rem; float:right">
+        <img src="http://covers.openlibrary.org/b/isbn/{{isbn}}-L.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+-->
+
+<div class="main4" >
+    <br>
+
+    <div class="col-6">
+        {% if result == []%}
+            <h4> No result found </h4>
+        {% endif %}
+    </div>
+
+    <ol>
+        {% for book in result %}
+        <br>
+            <li margin-left:15em>
+                <h5 >
+                {{ book.title }} 
+                by {{ book.author }}
+                </h5>
+            </li>
+        {% endfor %}
+    </ol>
+</div>
+</div>
+    </body>
+</html>
+{% endblock %}

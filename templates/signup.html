@@ -1,0 +1,62 @@
+<!-- 
+Aditya Chaudhari, ac3959@drexel.edu
+CS530: DUI project
+-->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Signup|Register
+{% endblock %}
+
+{% block body %}
+
+<div class="bakbody">
+    <ul>
+        <li><a href = "#HOME" ><img src="/img/books.svg" style="max-height: 16px;"></a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/books">Books</a></li>
+    </ul>
+
+<div class="main2">
+    <p class="sign1" align="center">Sign up</p>
+    
+    <form action={{url_for("signup")}} method="post" class="form1">
+          
+        <input type="text" class="un1" name="fname" placeholder="Enter first name">
+      
+          <input type="text" class="un1" name="lname" placeholder="Enter last name">
+          
+          <input type="text" class="un1" name="email" placeholder="Enter email address">
+            
+            <input type="text" class="un1" name="username" placeholder="Enter your Username">
+              
+            <input type="password" class="pass1" name="password" placeholder="Password">
+        
+            <input type="password" class="pass1" name="confirmpassword" placeholder="Confirm Password">
+        
+
+        {% if message %}
+        <div class="alert alert-danger" role="alert">
+			       {{ message }}
+		    </div>
+        {% endif %}
+        <br>
+        <button type="submit" class="submit1">Sign Up</button>
+
+        {% if text %}
+        <div class="alert alert-success" role="alert">
+			       {{ text }}
+		    </div>
+        {% endif %}
+    </form>
+
+    <br>
+
+    <form action={{url_for("index")}} class="col-3">
+        <button type="submit" class="submit1">Go Back</button>
+    </form>
+</div>
+</div>
+{% endblock %}

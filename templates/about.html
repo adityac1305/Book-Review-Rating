@@ -1,0 +1,184 @@
+<!-- 
+Aditya Chaudhari, ac3959@drexel.edu
+CS530: DUI project
+-->
+
+{% extends "layout.html" %}
+{% block title %}
+    <b>About
+    </b>
+{% endblock %}
+
+{% block body %}
+
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    background-color: #F3EBF6;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 0px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+    </style>
+</head>
+<body>
+
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="/books">Books</a></li>
+</ul>
+ 
+      
+      <h2 style="text-align:center">Our Crew</h2>
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="/img/sravya.jfif" alt="Jane" style="width:100%"class="imgmod">
+            <div class="container">
+              <h2>Sravya Atluri</h2>
+              <p class="title">Chief Financial Officer(CFO)</p>
+              <p>Student at Drexel University pursuing Masters in Computer Science</p>
+              <p>sravya@atluri.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="/img/atharva.jfif" alt="Mike" style="width:100%"class="imgmod">
+            <div class="container">
+              <h2>Atharva Deshpande</h2>
+              <p class="title">Chief Operating Officer(COO) </p>
+              <p>Student at Drexel University pursuing Masters in Computer Science</p>
+              <p>atharva@deshpande.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="/img/ace.jfif" alt="John" style="width:100%" height="500">
+            <div class="container">
+              <h2>Aditya Chaudhari</h2>
+              <p class="title">Founder & Chief Executive Officer(CEO)</p>
+              <p>Student at Drexel University pursuing Masters in Computer Science</p>
+              <p>aditya@chaudhari.com</p>
+              <p><button class="button">Contact</button></p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="column">
+            <div class="card">
+              <img src="/img/mohil.jfif" alt="John" style="width:100%"class="imgmod">
+              <div class="container">
+                <h2>Mohil Palav</h2>
+                <p class="title">Chief Operating Officer(COO) </p>
+                <p>Student at Drexel University pursuing Masters in Computer Science</p>
+                <p>mohil@palav.com</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="column">
+            <div class="card">
+              <img src="/img/nishi.jfif" alt="John" style="width:100%" class="imgmod">
+              <div class="container">
+                <h2>Nishit De</h2>
+                <p class="title">Chief Financial Officer(CFO)</p>
+                <p>Student at Drexel University pursuing Masters in Computer Science</p>
+                <p>nishit@de.com</p>
+                <p><button class="button">Contact</button></p>
+              </div>
+            </div>
+          </div>
+
+
+
+      </div>
+
+      <div class="about-section">
+        <h1>About Us Page</h1>
+        <p>This is a site for Collection of Book review and rating. This site has been made with the inspiration from Goodreads of Amazon.</p>
+        <p>This data can further be used for providing recommendations. It can also be used to provide information about the book sale statistics</p>
+      </div>
+
+
+
+    </body>
+</html>
+{% endblock %}
